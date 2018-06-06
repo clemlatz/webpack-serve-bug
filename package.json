@@ -1,0 +1,40 @@
+{
+  "name": "aos-plugin",
+  "version": "1.7.0",
+  "description": "Sequencity Plugin",
+  "repository": "git@integration:/opt/git/aos-plugin.git",
+  "author": "Clement Bourgoin <clement@actialuna.com>",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-serve --host 0.0.0.0 --content dist --config webpack.dev.js",
+    "deploy": "cp ./dist/plugin.js ./dist/plugin.js.map ../aos-server/public/plugin",
+    "lint": "eslint src/"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "webpack": "^4.11.0",
+    "webpack-cli": "^3.0.2",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^1.0.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "browserlist": [
+    "> 1%",
+    "IE 11"
+  ]
+}
